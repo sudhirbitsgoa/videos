@@ -1,0 +1,29 @@
+<section class="all-product-sidebar-area">
+    <div infinite-scroll="myPagingFunction()" class="container" infinite-scroll-distance="1">
+        <div class="row">
+            <div class="col-sm-12">
+                <!--Category Items List-->
+                <ul class="products row">
+                    <li class="col-md-4 align-items" ng-repeat="video in videos">
+                        <div class="product-details">
+                            <div class="single-line product-thumb">
+                                <h3>{{video.name}}</h3>
+                            </div>
+                            <div class="product-info" ng-click="showVideo(video)">
+                                <video style="width:100%" ng-src={{video.url}} controls="true"></video>
+                                <p>{{ video.description }}</p>
+                                <div class="group-item">
+                                    <uib-rating ng-model="video.ratings[0]" read-only="true"></uib-rating>
+                                </div>
+                                <div class="group-item">
+                                    <div class="uiv2-rate-count-btn"></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

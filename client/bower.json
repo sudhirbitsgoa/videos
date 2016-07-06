@@ -1,0 +1,29 @@
+{
+  "name": "kwik",
+  "version": "1",
+  "authors": [
+    "sudhir <sudhir.baru@fropcorn.com>"
+  ],
+  "description": "ui kwik treat",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.18",
+    "flexslider": "*",
+    "oclazyload": "~1.0.9",
+    "angular-bootstrap": "~1.3.2",
+    "angular-animate": "~1.5.3",
+    "ng-notifications-bar": "~0.0.16",
+    "ngStorage": "~0.3.2",
+    "ng-infinite-scroll": "~0.0.1"
+  },
+  "resolutions": {
+    "angular": "~1.2.26"
+  }
+}

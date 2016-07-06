@@ -1,0 +1,83 @@
+<section class="all-product-sidebar-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <div id="enabled_filters" class="filter_list clearfix">
+                    <div class="filter_list_col clearfix" ng-repeat="filter in filterObj.filters">
+                        <span>{{filter.name}}</span>
+                        <div class="pull-left">
+                            <p class="filter_search_tag" ng-repeat="subFilter in filter.subFilter">
+                                <span>{{subFilter.name}}</span>
+                                <a href class="tag_col_close" ng-click="filterItems(false, filter.id, subFilter.id, filter.name, subFilter.name)"></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Category Items List-->
+                <h3>
+                    {{catgItems.categoryName}}
+                </h3>
+                <ul class="products row">
+                    <li class="col-md-4 align-items" ng-repeat="catgItem in catgItems.subCategories">
+                        <div class="product-details">
+                            <div class="product-thumb">
+                                <div ng-if="catgItem.typeName == 'VEG'">
+                                    <span class="veg">
+                                        <i class="icon-veg"></i>
+                                    </span>
+                                </div>
+                                <div ng-if="catgItem.typeName == 'NON-VEG'">
+                                    <span class="nonveg">
+                                        <i class="icon-nonveg"></i>
+                                    </span>
+                                </div>
+                                <div ng-if="catgItem.typeName == 'EGG'">
+                                    <span class="egg">
+                                        <i class="icon-egg"></i>
+                                    </span>
+                                </div>
+                                <a ui-sref="shop.cake-details({'cakeId': {{catgItem.items[0].cakeId}} })">
+                                    <img ng-src="{{IMAGEURL + catgItem.imageUrl }}" class="img-responsive" alt="Cake Image"/>
+                                </a>
+                            </div>
+                            <div class="">
+                                <uib-tabset active="active">
+                                    <uib-tab heading="Static title" ng-repeat="backeryDet in catgItem.items[0].bakeries track by $index">
+                                        <uib-tab-heading>
+                                            <i class="fa fa-heart"></i>
+                                        </uib-tab-heading>
+                                        <div class="product-info">
+                                            <h3>{{backeryDet.bakeryName}}</h3>
+                                            <p class="single-line">{{ catgItem.items[0].cakeName }}</p>
+                                            <div class="group-item">
+                                                <form role="form" class="form-horizontal quantity">
+                                                    <div class="form-group">
+                                                        <select class="selectpicker bootstrap-select variant" ng-model="itemSelected" ng-init="itemSelected = backeryDet.priceList[0]" ng-options="item as item.detailQty + ' - ' + item.unitSymbol for item in backeryDet.priceList"></select>
+                                                    </div>
+                                                </form>
+                                                <div class="product-price">
+                                                    ₹{{ itemSelected.custPrice}}
+                                                </div>
+                                            </div>
+                                            <div class="group-item">
+                                                <div class="uiv2-rate-count-btn">
+                                                    <span class="uiv2-qty-label">Qty</span><input type="text" ng-model='catgItem.items[0].quantity' ng-init='catgItem.items[0].quantity = 1' id="p271035_qty" maxlength="2"></div>
+                                                <div class="cart">
+                                                    <button type="button" title="Add" ng-click="addToCart(catgItem.items[0], itemSelected, backeryDet)">
+                                                        ADD
+                                                        <span class="icon-shop32"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </uib-tab>
+                                </uib-tabset>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
