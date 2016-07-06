@@ -11,7 +11,7 @@ bower install angular-mocks --save-dev
 Test case configuration should be added in karma.conf.js
 
 ```
-./node_modules/karma/bin/karms init
+./node_modules/karma/bin/karma init
 ```
 This will prompt to select testing framework. 
 Importantly it asks for source and test files location. Follow the order in which the javascript files are placed in index.html
