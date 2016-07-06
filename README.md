@@ -4,7 +4,7 @@ JavaScript's loosely typed expression power has to be taken care with perfect un
 # Set up
 ```
 npm install karma --save-dev
-npm install karms-jasmine karma-chrome-launcher --save-dev
+npm install karma-jasmine karma-chrome-launcher --save-dev
 ```
 
 Test case configuration should be added in karma.conf.js
